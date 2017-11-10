@@ -31,7 +31,7 @@ public class FlashLight : MonoBehaviour {
 	}
 		
 		}
-	}
+	
 	public void setLightOn(){
 		lightOn = true;
 
@@ -39,3 +39,4 @@ public class FlashLight : MonoBehaviour {
 	public bool isLightOn(){
 		return lightOn;
 	}
+}
