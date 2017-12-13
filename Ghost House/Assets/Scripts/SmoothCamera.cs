@@ -20,7 +20,7 @@ public class SmoothCamera : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		Vector3 toPos = target.position = (target.rotation * defaultDistance);
+		Vector3 toPos = target.position + (target.rotation * defaultDistance);
 		Vector3 curPos = Vector3.Lerp(myT.position, toPos, distanceDamp * Time.deltaTime);
 		myT.position = curPos;
 

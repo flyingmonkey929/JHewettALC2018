@@ -6,10 +6,21 @@ public class BatteryScript : MonoBehaviour {
 
 	public int power = 4;
 
+	GameObject player;
+
+	int checkBat;
+
 	public GameObject flashlight;
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindWithTag("Player");
+
+		flashlight = player;
+
+		checkBat = flashlight.gameObject.GetComponentInChildren<FlashLight>().currentPower;
+		print("CKBat =" +checkBat);
+
 	
 	}
 	
@@ -19,7 +30,7 @@ public class BatteryScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other){
-		if(other.gameObject.tag == "Player"){
+		if(other.gameObject.tag == "Player" && checkBat == 4){
 			flashlight.gameObject.GetComponentInChildren<FlashLight>().currentPower = power;
 			Destroy(gameObject);
 		}
