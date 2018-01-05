@@ -23,7 +23,7 @@ public class BatterySpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 			if(batSpawned == false){
-					if(batspawning){
+					if(!spawning){
 						spawning = !spawning;
 						StartCoroutine(SpawnBat(spawnTime, battery));
 						print("Spawn Box Empty");
